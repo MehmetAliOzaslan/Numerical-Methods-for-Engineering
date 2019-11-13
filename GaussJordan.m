@@ -18,20 +18,19 @@ for j = 1:m-1
 end
 disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
 fprintf('%s \n','         Inverse of a matrix by GAUSSIAN - JORDAN method (All System)')
+
 for j = m:-1:1
     for i = j-1:-1:1
-        C(i,:) = (C(j,:)*(-C(i,j)/C(j,j)) + C(i,:))/(C(i,i));  
+        C(i,:) = (C(j,:)*(-C(i,j)/C(j,j)) + C(i,:))/C(i,i);  
     end 
     C(m,m:end) = C(m,m:end) / C(m,m);
 end
 disp(C)
 disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
 fprintf('%s \n','         Inverse of a matrix by GAUSSIAN - JORDAN method')
-for j = m:-1:1
-    for i = j-1:-1:1
-        D = C(:,(m+1):end);
-    end 
-end
+
+D = C(:,(m+1):end);
+
 disp(D)
 disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
 fprintf('%s \n','     Roots')
